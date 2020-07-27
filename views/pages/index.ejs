@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book App Test</title>
+</head>
+
+<body>
+    <header>
+        <h1>Hello Book app</h1>
+    </header>
+    <main>
+        <section>
+            <% resultsKey.forEach(item=>{ %>
+                <h2>
+                    <%= item.author_name %>
+                </h2>
+                <div>
+
+                    <%= item.title %>
+                </div>
+
+                <p>
+                    <%= item.publisher %>
+
+                </p>
+
+                <p>
+                    <%= item.isbn %>
+                </p>
+                <p>
+                    <%= item.language %>
+                </p>
+
+                <a href="/details/<%=item.id%>"><button>SHow Details</button> </a>
+
+                <%   }) %>
+        </section>
+
+
+    </main>
+    <footer></footer>
+
+</body>
+
+</html>

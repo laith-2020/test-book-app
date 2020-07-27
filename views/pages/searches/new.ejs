@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new search</title>
+</head>
+
+<body>
+
+    <form action="/search" method="post">
+        <label>
+            <input class="forAll" id="bookTextField" type="text" placeholder="book" name="bookName"  />
+        </label>
+
+        <br>
+        <br>
+        <label class="titleLab" for="title">
+            By title
+            <input id="titleRadio" type="radio" id="title" value="title" name="by" />
+        </label>
+        <br>
+        <br>
+        <label class="titleLab" for="author">
+            By Author
+            <input  type="radio" id="author" value="author" name="by" />
+        </label>
+        <br>
+        <br>
+        <button id="but" class="forAll">Search the Google Books API </button>
+
+    </form>
+
+</body>
+
+</html>

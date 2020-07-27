@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>details</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+
+<body>
+    <% resultKey.forEach(item=>{ %>
+        <h2>
+            <%= item.author_name %>
+        </h2>
+        <div>
+
+            <%= item.title %>
+        </div>
+
+        <p>
+            <%= item.publisher %>
+
+        </p>
+
+        <p>
+            <%= item.isbn %>
+        </p>
+        <p>
+            <%= item.language %>
+        </p>
+        <button id="updateButton">UPDATE</button>
+        <form class="updateForm" action="/updateData/<%=item.id%>?_method=put" method="POST">
+
+            <input type="text" name="author_name" value="<%=item.author_name%>">
+            <br>
+            <input type="text" name="title" value="<%=item.title%>">
+            <br>
+            <input type="text" name="publisher" value="<%=item.publisher%>">
+            <br>
+            <input type="text" name="isbn" value="<%=item.isbn%>">
+            <br>
+            <input type="text" name="language" value="<%=item.language%>">
+            <br>
+            <button type="submit"> UPDATE </button>
+
+        </form>
+        <br>
+        <form action="/delete/<%=item.id%>?_method=delete" method="post">
+            <button type="submit">DELETE</button>
+        </form>
+
+        <%   }) %>
+            <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+            <script src="/app.js"></script>
+</body>
+
+</html>

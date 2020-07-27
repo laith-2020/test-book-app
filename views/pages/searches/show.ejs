@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+
+<body>
+    <div>
+        <% resultKey.forEach((item,idx) =>{ %>
+            <h2>
+                <%= item.author_name %>
+            </h2>
+            <div>
+
+                <%= item.title %>
+            </div>
+
+            <p>
+                <%= item.publisher %>
+
+            </p>
+
+            <p>
+                <%= item.isbn %>
+            </p>
+            <p>
+                <%= item.language %>
+            </p>
+            <button class="myBut">Select This Book</button>
+            <form class="mybutclass" action="/showaddform" method="post">
+
+                <input type="text" name="author_name" value="<%= item.author_name %>">
+                <br>
+                <input type="text" name="title" value="<%= item.title %>">
+                <br>
+                <input type="text" name="publisher" value="<%= item.publisher %>">
+                <br>
+                <input type="text" name="isbn" value="<%= item.isbn %>">
+                <br>
+                <input type="text" name="language" value="<%= item.language %>">
+                <br>
+                <button>ADD TO DATABASE</button>
+            </form>
+            <hr>
+
+            <%   }) %>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="/app.js"></script>
+</body>
+
+</html>
